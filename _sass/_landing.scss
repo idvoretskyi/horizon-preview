@@ -1,0 +1,194 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background: url('/images/horizon-coming-soon-bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: rgb(236, 196, 127);
+}
+
+.bg {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.05);
+}
+
+.coming-soon {
+    z-index: 0;
+    padding: 30px 60px;
+    max-width: 800px;
+    margin: 60px auto;
+    background: white;
+    box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.2);
+
+    p {
+        font-family: "freight-sans-pro", sans-serif;
+        font-size: 26px;
+        font-weight: 300;
+        margin-bottom: 28px;
+        strong { font-weight:600; }
+        &:last-child { margin: 0; }
+    }
+
+    h2 {
+        font-family: "freight-sans-pro", sans-serif;
+        font-weight: 500;
+        font-size: 33px;
+        line-height: 70px;
+    }
+}
+
+.description {
+    border-left: rgb(211, 218, 218) 8px solid;
+    padding-left: 24px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 25px;
+}
+
+h1.logo {
+    $size: 80px;
+    font-family: "museo-sans", sans-serif;
+    background: url('/images/horizon-mark.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: $size - 6;
+    font-size: $size;
+    font-weight: 300;
+    padding-left: $size*1.2;
+    text-transform: lowercase;
+}
+
+.developer-preview {
+    margin-top: 40px;
+    form {
+        margin-top: 17px;
+
+        & input {
+            outline: none;
+            display: inline-block;
+            width: 100%;
+            margin: 0 5px 0 0;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            color: #333;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            font-size: 18px;
+            font-wieght: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            @include transition(0.2s linear);
+            &:focus {
+                color: #333;
+                border: 1px solid rgb(164, 126, 191);
+            }
+        }
+        & button {
+            cursor: pointer;
+            background: rgb(226, 64, 91);
+            padding: 10px 20px;
+            height: 42px;
+            vertical-align: top;
+            border: 0;
+            color: #fff;
+            font-size: 13px;
+            text-shadow:0 0 1px transparent;
+            font-weight: 700;
+            text-transform: uppercase;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            @include transition(0.2s linear);
+            &:hover {
+                background: rgb(177, 36, 82);
+            }
+        }
+
+    }
+
+    // Overriding Mailchimp styles
+    #mc-embedded-subscribe-form {
+        .mc-field-group {
+            width: 35%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        input.mce_inline_error {
+            border-color: #ccc;
+        }
+        // Mailchimp-specific "required fields" message
+         div.mce_inline_error {
+            background: none;
+            font-weight: normal;
+            color: rgb(226, 64, 91);
+            margin: 0;
+            padding: 5px 10px 0px 5px;
+            font-size: 16px;
+        }
+    }
+}
+
+.why-horizon {
+    margin-top: 48px;
+    margin-bottom: 30px;
+    position: relative;
+    background: rgb(27, 27, 31);
+    .play-button {
+        position: absolute;
+        top: 0;
+        background: url('/images/play-button.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+        background-size: 100px;
+        cursor: pointer;
+        @include transition(opacity 0.2s linear);
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+@include media-query(1000px) {
+    .coming-soon {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@include media-query($on-palm) {
+    h1.logo {
+        background-size: 60px;
+        font-size: 65px;
+        padding-left: 84px;
+    }
+    .coming-soon {
+        padding: 25px 20px;
+        margin: 0;
+        p {
+            font-size: 23px;
+            line-height: 32px;
+        }
+    }
+    .description {
+        border-left: none;
+        padding-left: 0;
+    }
+    .developer-preview h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .developer-preview form input {
+        display: block;
+        width: 100%;
+    }
+}
