@@ -16,12 +16,24 @@ layout: default
     </section>
     <section class="developer-preview">
         <h2>Sign up for the developer preview:</h2>
-        {% include wufoo.md %}
-        <!-- <form>
+        <!--
+        <form>
             <input type="text" placeholder="Email address"></input>
             <input type="text" placeholder="GitHub username"></input>
             <button type="submit">Request invite</button>
-        </form> -->
+        </form>
+        -->
+        <form name="hz-developer-preview" action="https://rethinkdb.wufoo.com/forms/qwzgewa1pyit26/">
+            <ul>
+                <li>
+                    <input name="Field2" type="text" placeholder="Email address" required></input>
+                </li>
+                <li>
+                    <input name="Field1" type="text" placeholder="GitHub username" required></input>
+                </li>
+                <li class="button"><button type="submit">Request invite</button></li>
+            </ul>
+        </form>
     </section>
     <section class="why-horizon preview">
         <img class="hz-video" src="/images/horizon-video.png" />
@@ -33,4 +45,13 @@ layout: default
     $('img.hz-video, div.play-button').click(function() {
         $(this).parent().html(video);
     });
+    $('form[name=hz-developer-preview]').validate({
+        submitHandler: function(form) {
+            console.log(form);
+            form.submit();
+            //$.post('https://rethinkdb.wufoo.com/api/v3/forms/qwzgewa1pyit26/entries.json', function(response) {
+            //    console.log(response);
+            //})
+        }
+    })
 </script>
