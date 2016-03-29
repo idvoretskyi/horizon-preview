@@ -33,7 +33,8 @@ RUN pip install -r ./requirements.txt
 # Copy and generate asset for the app
 ENV WUFOO_KEY=0XJN-NFD3-WAHO-03UV
 COPY app/ .
-RUN sass ./sass/main.scss ./static/css/main.css
+RUN mkdir -p ./static/css/ && \
+    sass ./sass/main.scss ./static/css/main.css
 
 # Start services
 CMD ["supervisord", "-n"]
