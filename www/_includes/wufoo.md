@@ -1,1 +1,0 @@
-<iframe height="320" allowTransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none"  src="https://rethinkdb.wufoo.com/embed/qwzgewa1pyit26/"><a href="https://rethinkdb.wufoo.com/forms/qwzgewa1pyit26/">Fill out my Wufoo form!</a></iframe>

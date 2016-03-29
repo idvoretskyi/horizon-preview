@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Horizon: join the developer preview</title>
+        <meta name="description" content="">
+
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="canonical" href="/">
+
+        <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="shortcut icon" href="/favicon/favicon.ico">
+
+        <script src="https://use.typekit.net/gbh0vju.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+    </head>
+
+    <body>
+        <div class="bg"></div>
+        <section class="coming-soon">
+            <h1 class="logo">Horizon</h1>
+            <section class="description">
+                <p>
+                    Horizon is a <strong>realtime open-source backend for JavaScript apps</strong>, built
+                    by the <a href="https://rethinkdb.com">RethinkDB</a> team (and an amazing community).
+                </p>
+                <p>
+                    Horizon includes APIs and tools that make it easy to quickly prototype your web
+                    and mobile app, and then scale it to millions of users.
+                </p>
+            </section>
+            <section class="developer-preview">
+                <h2>Sign up for the developer preview:</h2>
+                <form name="hz-developer-preview" action="/invite" method="post">
+                    <ul>
+                        <li>
+                            <input name="email" type="text" placeholder="Email address" required></input>
+                        </li>
+                        <li>
+                            <input name="github" type="text" placeholder="GitHub username" required></input>
+                        </li>
+                        <li class="button"><button type="submit">Request invite</button></li>
+                    </ul>
+                </form>
+            </section>
+            <section class="why-horizon preview">
+                <img class="hz-video" src="/images/horizon-video.png" />
+                <div class="play-button" src="/images/play-button.png" />
+            </section>
+        </section>
+        <script type="text/javascript">
+        var video = '<div class="video"><iframe width="800" height="450" src="https://www.youtube.com/embed/zL5_EsF06DM?rel=0&amp;showinfo=0&autoplay=1&start=624" frameborder="0" allowfullscreen></iframe></div>'
+        $('img.hz-video, div.play-button').click(function() {
+            $(this).parent().html(video);
+        });
+        $('form[name=hz-developer-preview]').validate({
+            rules: {
+                email: {
+                    email: true
+                }
+            },
+            submitHandler: function(form) {
+                console.log(form);
+                form.submit();
+            }
+        })
+        </script>
+    </body>
+</html>
