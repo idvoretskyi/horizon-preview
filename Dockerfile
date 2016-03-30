@@ -5,12 +5,13 @@ MAINTAINER Michael Glukhovsky, mike@rethinkdb.com
 RUN apt-get update && \
     apt-get -y install nginx-full && \
     apt-get -y install build-essential python-dev python-pip supervisor && \
-    apt-get -y install ruby && \
+    apt-get -y install ruby ruby-dev && \
     apt-get -y autoremove && \
     apt-get -y autoclean && \
     pip install --upgrade pip && \
     pip install uwsgi && \
-    gem install sass
+    gem install jekyll
+
 
 # Set up the WSGI app
 COPY uwsgi.ini /etc/uwsgi.ini
@@ -26,15 +27,14 @@ RUN mkdir -p /var/log/supervisor
 COPY supervisor.conf /etc/supervisor/conf.d/
 
 # Set up the app
-WORKDIR /var/www/app/
-COPY app/requirements.txt ./requirements.txt
-RUN pip install -r ./requirements.txt
+COPY app/requirements.txt /var/www/app/requirements.txt
+RUN pip install -r /var/www/app/requirements.txt
 
-# Copy and generate asset for the app
+# Copy and generate assets for the app
 ENV WUFOO_KEY=0XJN-NFD3-WAHO-03UV
-COPY app/ .
-RUN mkdir -p ./static/css/ && \
-    sass ./sass/main.scss ./static/css/main.css
+COPY app/ /var/www/app/
+COPY www/ /tmp/www
+RUN jekyll build -s /tmp/www/ -d /var/www/app/static/
 
 # Start services
 CMD ["supervisord", "-n"]

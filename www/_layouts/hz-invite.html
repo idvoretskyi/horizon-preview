@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<section class="coming-soon">
+    <h1 class="logo">Horizon</h1>
+    <section class="description">
+        <p>
+            Horizon is a <strong>realtime open-source backend for JavaScript apps</strong>, built
+            by the <a href="https://rethinkdb.com">RethinkDB</a> team (and an amazing community).
+        </p>
+        <p>
+            Horizon includes APIs and tools that make it easy to quickly prototype your web
+            and mobile app, and then scale it to millions of users.
+        </p>
+    </section>
+    <section class="developer-preview">
+        <h2>Sign up for the developer preview:</h2>
+        <p class="invite-error">{%  if page.email_error %}Please enter a valid email address.{% endif %}</p>
+        <form name="hz-developer-preview" action="/invite" method="post">
+            <ul>
+                <li>
+                    <input name="email" type="text" placeholder="Email address" required></input>
+                </li>
+                <li>
+                    <input name="github" type="text" placeholder="GitHub username" required></input>
+                </li>
+                <li class="button"><button type="submit">Request invite</button></li>
+            </ul>
+        </form>
+    </section>
+    {% include hz-talk.html %}
+</section>

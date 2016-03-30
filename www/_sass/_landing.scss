@@ -62,14 +62,65 @@ h1.logo {
 }
 
 .developer-preview {
-    margin-top: 60px;
-    /*
-        Terrible Wufoo hack: to overcome Wufoo's lack of a responsive form, we
-        manually adjust the iframe's height based on specific pixel-breakpoints.
-    */
-    iframe {
-        height: 74px;
-        @include media-query(899px) { min-height: 161px; }
+    $_error: rgb(226, 64, 91);
+    margin-top: 40px;
+
+    .invite-error {
+        color: $_error;
+        font-size: 16px;
+    }
+    form {
+        margin-top: 25px;
+
+        ul { margin: 0; }
+        li {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: inline-block;
+            list-style-type: none;
+            width: 38%;
+            margin: 0 8px 20px 0;
+            vertical-align: top;
+            &.button { width: auto; }
+        }
+
+        input {
+            font-size: 18px;
+            font-weight: 400;
+            background: white;
+            outline: none;
+            width: 100%;
+            padding: 9px 13px;
+            border: 1px solid #ccc;
+            color: #333;
+            @include box-sizing(border-box);
+            @include transition(0.2s linear);
+            &:focus {
+                color: #333;
+                border: 1px solid rgb(164, 126, 191);
+            }
+            &.error { margin-bottom: 7px; }
+        }
+
+        button {
+            cursor: pointer;
+            background: rgb(226, 64, 91);
+            padding: 10px 20px;
+            height: 41px;
+            vertical-align: top;
+            border: 0;
+            color: white;
+            font-size: 13px;
+            text-shadow:0 0 1px transparent;
+            font-weight: 700;
+            text-transform: uppercase;
+            @include transition(0.2s linear);
+            &:hover {
+                background: rgb(177, 36, 82);
+            }
+        }
+
+        label.error { color: $_error; }
     }
 }
 
@@ -128,60 +179,4 @@ h1.logo {
         display: block;
         width: 100%;
     }
-}
-
-
-/* Horizon styles */
-form {
-    margin-top: 25px;
-
-    ul { margin: 0; }
-    li {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        display: inline-block;
-        list-style-type: none;
-        width: 38%;
-        margin: 0 8px 20px 0;
-        vertical-align: top;
-        &.button { width: auto; }
-    }
-
-    input {
-        font-size: 18px;
-        font-weight: 400;
-        background: white;
-        outline: none;
-        width: 100%;
-        padding: 9px 13px;
-        border: 1px solid #ccc;
-        color: #333;
-        @include box-sizing(border-box);
-        @include transition(0.2s linear);
-        &:focus {
-            color: #333;
-            border: 1px solid rgb(164, 126, 191);
-        }
-        &.error { margin-bottom: 7px; }
-    }
-
-    button {
-        cursor: pointer;
-        background: rgb(226, 64, 91);
-        padding: 10px 20px;
-        height: 41px;
-        vertical-align: top;
-        border: 0;
-        color: white;
-        font-size: 13px;
-        text-shadow:0 0 1px transparent;
-        font-weight: 700;
-        text-transform: uppercase;
-        @include transition(0.2s linear);
-        &:hover {
-            background: rgb(177, 36, 82);
-        }
-    }
-
-    label.error { color: rgb(226, 64, 91); }
 }

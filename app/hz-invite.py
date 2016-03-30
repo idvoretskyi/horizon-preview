@@ -4,6 +4,7 @@ from requests.auth import HTTPBasicAuth
 import os, sys
 
 app = Flask(__name__)
+app.debug=True
 
 form = 'horizon-developer-preview'
 key = 'WUFOO_KEY'
@@ -28,14 +29,16 @@ def horizon():
     auth = HTTPBasicAuth(os.environ[key], 'wufoo')
     req = requests.post('https://rethinkdb.wufoo.com/api/v3/forms/%s/entries.json' % form, data=data, auth=auth)
     if req.status_code is 201:
-        return redirect('/thanks')
+        return redirect('/thanks/')
     if req.status_code is 200:
         response = json.loads(req.text)
         if response['Success'] is 0:
+            if len(response['FieldErrors']) > 0 and response['FieldErrors'][0]['ErrorText'] == 'Please enter a valid email address.':
+                return redirect('/invalid-email/')
             app.logger.error("Data: %s\nResponse: %s" %(data,response))
-            return redirect('/error')
+            return redirect('/error/')
     app.logger.error("Data: %s\nResponse: %s" %(data,req.text))
-    return redirect('/error')
+    return redirect('/error/')
 
 if __name__ == '__main__':
     app.run()
