@@ -1,0 +1,104 @@
+$app-padding: 30px;
+
+html, body {
+    height: 100%;
+}
+
+header {
+    padding: 15px $app-padding;
+    color: white;
+    background: rgb(3, 67, 68);
+    display: flex;
+    align-items: flex-end;
+    h1 {
+        flex-grow: 1;
+        line-height: normal;
+        font-size: 18px;
+    }
+    h1, p { margin-bottom: 0;}
+}
+
+ul.user-list {
+    margin: 0;
+    width: 100%;
+    list-style-type: none;
+}
+
+ul.user {
+    margin: 0;
+    padding: 10px $app-padding;
+    display: flex;
+
+    &.even { background: rgb(240, 244, 247); }
+    li {
+        display: inline-block;
+        font-size: 14px;
+
+        p {
+            margin: 0;
+        }
+
+
+
+        &.avatar {
+            $_size: 30px;
+            width: $_size + 10px;
+            img {
+                max-width: $_size;
+                max-height:$_size;
+            }
+            margin-right: 10px;
+        }
+        &.info {
+            p {
+                padding: 0;
+                &.github {
+                    display: inline-block;
+                    min-width: 200px;
+                    margin-right: 10px;
+                }
+                &.timeago {
+                    display: inline-block;
+                    font-size: 10px;
+                    font-weight: bold;
+
+                    color: rgb(101, 101, 101);
+                    text-transform: uppercase;
+                }
+                &.email {
+                    font-size: 12px;
+                    margin-top: 5px;
+                }
+            }
+        }
+        &.invites {
+            margin-left: auto;
+
+            li {
+                margin-right: 10px;
+                margin-top: 7px;
+                &:first-child { margin-top: 0; }
+            }
+
+            p, button {
+                min-width: 110px;
+                text-align: center;
+                font-size: 12px;
+            }
+
+            button {
+                font-family: $base-font-family;
+                border: thin solid rgb(94, 166, 147);
+                color: rgb(39, 106, 88);
+                padding: 5px 9px;
+                border-radius: 3px;
+                background: rgb(255, 253, 253);
+                cursor: pointer;
+                &:hover {
+                    border-color: rgb(39, 106, 88);
+                }
+
+            }
+        }
+    }
+}

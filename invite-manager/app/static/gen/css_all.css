@@ -1,0 +1,313 @@
+/* line 27 */
+html {
+  color: red;
+}
+
+/* line 3, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 7, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+header {
+  padding: 15px 30px;
+  color: white;
+  background: #034344;
+  display: flex;
+  align-items: flex-end;
+}
+/* line 13, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+header h1 {
+  flex-grow: 1;
+  line-height: normal;
+  font-size: 18px;
+}
+/* line 18, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+header h1, header p {
+  margin-bottom: 0;
+}
+
+/* line 21, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user-list {
+  margin: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+/* line 27, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user {
+  margin: 0;
+  padding: 10px 30px;
+  display: flex;
+}
+/* line 32, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user.even {
+  background: #f0f4f7;
+}
+/* line 33, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li {
+  display: inline-block;
+  font-size: 14px;
+}
+/* line 37, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li p {
+  margin: 0;
+}
+/* line 43, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.avatar {
+  width: 40px;
+  margin-right: 10px;
+}
+/* line 46, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.avatar img {
+  max-width: 30px;
+  max-height: 30px;
+}
+/* line 53, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.info p {
+  padding: 0;
+}
+/* line 55, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.info p.github {
+  display: inline-block;
+  min-width: 200px;
+  margin-right: 10px;
+}
+/* line 60, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.info p.timeago {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  color: #656565;
+  text-transform: uppercase;
+}
+/* line 68, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.info p.email {
+  font-size: 12px;
+  margin-top: 5px;
+}
+/* line 74, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.invites {
+  margin-left: auto;
+}
+/* line 77, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.invites li {
+  margin-right: 10px;
+  margin-top: 7px;
+}
+/* line 80, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.invites li:first-child {
+  margin-top: 0;
+}
+/* line 83, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.invites p, ul.user li.invites button {
+  min-width: 110px;
+  text-align: center;
+  font-size: 12px;
+}
+/* line 89, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.invites button {
+  font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: thin solid #5ea693;
+  color: #276a58;
+  padding: 5px 9px;
+  border-radius: 3px;
+  background: #fffdfd;
+  cursor: pointer;
+}
+/* line 97, /Users/michael/git/horizon-preview/invite-manager/app/sass/_invite-manager.scss */
+ul.user li.invites button:hover {
+  border-color: #276a58;
+}
+
+/**
+ * Reset some basic elements
+ */
+/* line 4, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Basic styling
+ */
+/* line 16, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+body {
+  font: 400 16px/1.5 "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
+  background-color: #fdfdfd;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+/* line 33, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure {
+  margin-bottom: 15px;
+}
+
+/**
+ * Images
+ */
+/* line 45, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/**
+ * Figures
+ */
+/* line 55, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+figure > img {
+  display: block;
+}
+
+/* line 59, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+figcaption {
+  font-size: 14px;
+}
+
+/**
+ * Lists
+ */
+/* line 68, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+ul, ol {
+  margin-left: 30px;
+}
+
+/* line 73, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+/**
+ * Headings
+ */
+/* line 84, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+/**
+ * Links
+ */
+/* line 93, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+a {
+  color: #2a7ae2;
+  text-decoration: none;
+}
+/* line 97, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+a:visited {
+  color: #1756a9;
+}
+/* line 101, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+a:hover {
+  color: #111;
+  text-decoration: underline;
+}
+
+/**
+ * Blockquotes
+ */
+/* line 112, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+blockquote {
+  color: #828282;
+  border-left: 4px solid #e8e8e8;
+  padding-left: 15px;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+}
+/* line 120, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Code formatting
+ */
+/* line 130, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+pre,
+code {
+  font-size: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  background-color: #eef;
+}
+
+/* line 138, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+code {
+  padding: 1px 5px;
+}
+
+/* line 142, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+}
+/* line 146, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+pre > code {
+  border: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/**
+ * Wrapper
+ */
+/* line 158, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+.wrapper {
+  max-width: -webkit-calc(800px - (30px * 2));
+  max-width: calc(800px - (30px * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+@media screen and (max-width: 800px) {
+  /* line 158, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+  .wrapper {
+    max-width: -webkit-calc(800px - (30px));
+    max-width: calc(800px - (30px));
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/**
+ * Clearfix
+ */
+/* line 182, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+.wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**
+ * Icons
+ */
+/* line 196, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+.icon > svg {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+/* line 202, /Users/michael/git/horizon-preview/invite-manager/app/sass/_base.scss */
+.icon > svg path {
+  fill: #828282;
+}

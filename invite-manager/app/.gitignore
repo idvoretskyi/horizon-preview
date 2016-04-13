@@ -1,0 +1,4 @@
+app/static/gen
+.webassets-cache
+gmail/client_id.json
+gmail/client_secret.json

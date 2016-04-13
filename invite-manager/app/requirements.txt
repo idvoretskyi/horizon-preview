@@ -1,0 +1,7 @@
+glob2
+uwsgi
+flask
+requests
+http://github.com/miracle2k/webassets/tarball/master#egg=webassets-dev
+Flask-Assets
+flask_oauthlib
